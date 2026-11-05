@@ -1,0 +1,291 @@
+/* ==========================================================================
+   THE TRADING MIND - Terminal Components, Glassmorphism & Cards
+   ========================================================================== */
+
+/* Grid Layouts */
+.grid-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  flex: 1;
+}
+
+.grid-3col {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.grid-split-70-30 {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr;
+  gap: 24px;
+  flex: 1;
+}
+
+/* Glassmorphism Cards */
+.card {
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  transition: border-color var(--transition-fast), background var(--transition-fast);
+}
+
+.card:hover {
+  background: var(--bg-card-hover);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.card.highlight {
+  border-color: var(--border-accent);
+  box-shadow: 0 0 25px rgba(0, 229, 255, 0.08);
+}
+
+.card.danger {
+  border-color: rgba(255, 23, 68, 0.35);
+  box-shadow: 0 0 25px rgba(255, 23, 68, 0.08);
+}
+
+.card.success {
+  border-color: rgba(0, 230, 118, 0.35);
+  box-shadow: 0 0 25px rgba(0, 230, 118, 0.08);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.card-body {
+  flex: 1;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Terminal Badges & Tags */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.badge-cyan {
+  background: rgba(0, 229, 255, 0.12);
+  color: var(--accent-cyan);
+  border: 1px solid rgba(0, 229, 255, 0.3);
+}
+
+.badge-green {
+  background: rgba(0, 230, 118, 0.12);
+  color: var(--accent-green);
+  border: 1px solid rgba(0, 230, 118, 0.3);
+}
+
+.badge-red {
+  background: rgba(255, 23, 68, 0.12);
+  color: var(--accent-red);
+  border: 1px solid rgba(255, 23, 68, 0.3);
+}
+
+.badge-amber {
+  background: rgba(255, 171, 0, 0.12);
+  color: var(--accent-amber);
+  border: 1px solid rgba(255, 171, 0, 0.3);
+}
+
+.badge-purple {
+  background: rgba(179, 136, 255, 0.12);
+  color: var(--accent-purple);
+  border: 1px solid rgba(179, 136, 255, 0.3);
+}
+
+/* Metric Boxes */
+.metric-row {
+  display: flex;
+  gap: 16px;
+  margin: 16px 0;
+}
+
+.metric-box {
+  flex: 1;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
+  padding: 14px;
+}
+
+.metric-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.metric-value {
+  font-family: var(--font-mono);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* Interactive Simulation Mount Box */
+.sim-mount-placeholder {
+  flex: 1;
+  min-height: 380px;
+  background: rgba(8, 12, 18, 0.8);
+  border: 1px dashed var(--border-subtle);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  text-align: center;
+  position: relative;
+}
+
+.sim-mount-placeholder .placeholder-icon {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+  opacity: 0.8;
+}
+
+.sim-mount-placeholder .placeholder-title {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--accent-cyan);
+  margin-bottom: 8px;
+}
+
+.sim-mount-placeholder .placeholder-desc {
+  color: var(--text-muted);
+  max-width: 520px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.sim-mount-placeholder .placeholder-tag {
+  margin-top: 16px;
+}
+
+/* Callout & Quotes */
+.callout {
+  padding: 16px 20px;
+  border-left: 3px solid var(--accent-cyan);
+  background: rgba(0, 229, 255, 0.05);
+  border-radius: 0 6px 6px 0;
+  margin: 16px 0;
+  font-size: 0.95rem;
+}
+
+.callout.danger {
+  border-left-color: var(--accent-red);
+  background: rgba(255, 23, 68, 0.05);
+}
+
+.callout.success {
+  border-left-color: var(--accent-green);
+  background: rgba(0, 230, 118, 0.05);
+}
+
+.callout-title {
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+/* Feature List */
+.feature-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.feature-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+}
+
+.feature-list li strong {
+  color: var(--text-primary);
+}
+
+.bullet-icon {
+  color: var(--accent-cyan);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  margin-top: 2px;
+}
+
+/* Code & Formulas */
+.formula-block {
+  font-family: var(--font-mono);
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--border-subtle);
+  border-radius: 6px;
+  padding: 12px 16px;
+  color: var(--accent-cyan);
+  font-size: 0.9rem;
+  margin: 12px 0;
+  overflow-x: auto;
+}
+
+/* Terminal Button CTA */
+.btn-terminal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 22px;
+  background: linear-gradient(135deg, rgba(0, 229, 255, 0.2), rgba(0, 230, 118, 0.2));
+  border: 1px solid var(--accent-cyan);
+  color: #ffffff;
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.2);
+}
+
+.btn-terminal:hover {
+  background: linear-gradient(135deg, rgba(0, 229, 255, 0.35), rgba(0, 230, 118, 0.35));
+  box-shadow: 0 0 25px rgba(0, 229, 255, 0.4);
+  transform: translateY(-1px);
+}

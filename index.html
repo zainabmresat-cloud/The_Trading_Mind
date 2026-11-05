@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Trading Mind // Interactive Psychology Simulation</title>
+  <link rel="stylesheet" href="css/presentation.css">
+  <link rel="stylesheet" href="css/terminal.css">
+</head>
+<body>
+
+  <!-- Top Progress Bar -->
+  <div id="top-progress-bar-container">
+    <div id="top-progress-bar"></div>
+  </div>
+
+  <!-- Terminal Top HUD -->
+  <header class="terminal-header">
+    <div class="header-left">
+      <div class="terminal-brand">
+        <span>THE TRADING MIND</span>
+        <span class="brand-badge">TERMINAL v1.0</span>
+      </div>
+      <div class="hud-stat">
+        <span class="hud-stat-label">CASH:</span>
+        <span class="hud-stat-val" id="hud-cash">$10,000.00</span>
+      </div>
+      <div class="hud-stat">
+        <span class="hud-stat-label">EQUITY:</span>
+        <span class="hud-stat-val" id="hud-equity">$10,000.00</span>
+      </div>
+      <div class="hud-stat">
+        <span class="hud-stat-label">MAX DD:</span>
+        <span class="hud-stat-val" id="hud-drawdown">0.0%</span>
+      </div>
+    </div>
+
+    <div class="header-right">
+      <div class="hud-orb-slot" id="hud-orb-container" title="Psychological Stress Orb (Milestone 4)">
+        <div class="orb-indicator-dot"></div>
+        <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent-cyan);">STRESS: EQUILIBRIUM</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Presentation Slides Container -->
+  <main class="deck-container">
+
+    <!-- SLIDE 1: Title & The Market is a Mirror -->
+    <section class="slide active" id="slide-1" data-slide-index="0">
+      <div class="slide-content-wrapper">
+        <div class="slide-header">
+          <span class="slide-tag">01 // INTRODUCTION & PREMISE</span>
+          <h1 class="slide-title">The Market is a Mirror</h1>
+          <p class="slide-subtitle">Why 90% of retail traders fail despite having access to identical financial data.</p>
+        </div>
+
+        <div class="grid-2col">
+          <div class="card highlight">
+            <div class="card-header">
+              <h3 class="card-title">
+                <span>The Psychological Paradox</span>
+              </h3>
+              <span class="badge badge-cyan">Cognitive Reality</span>
+            </div>
+            <div class="card-body">
+              <p>Trading is the only profession where raw intelligence, effort, and optimism can actively work against you. Traditional education treats markets as mathematical equations, yet market price action is fundamentally driven by human psychology.</p>
+              
+              <div class="metric-row">
+                <div class="metric-box">
+                  <div class="metric-label">Retail Failure Rate</div>
+                  <div class="metric-value" style="color: var(--accent-red);">90%</div>
+                </div>
+                <div class="metric-box">
+                  <div class="metric-label">Cause: Emotion vs Logic</div>
+                  <div class="metric-value" style="color: var(--accent-amber);">85%</div>
+                </div>
+              </div>
+
+              <div class="callout">
+                <div class="callout-title">The Premise</div>
+                You do not trade the markets. You trade your own beliefs, fears, impulses, and cognitive biases.
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">The $10,000 Challenge</h3>
+              <span class="badge badge-green">Interactive Sim</span>
+            </div>
+            <div class="card-body">
+              <p>Throughout this presentation, you will manage a live virtual portfolio with <strong>$10,000 in starting capital</strong>. You will face 5 realistic market scenarios:</p>
+              
+              <ul class="feature-list">
+                <li><span class="bullet-icon">▸</span> <strong>The Parabolic Run:</strong> Will you succumb to FOMO and chase the top?</li>
+                <li><span class="bullet-icon">▸</span> <strong>The Flash Crash:</strong> Will you panic-sell at maximum capitulation?</li>
+                <li><span class="bullet-icon">▸</span> <strong>The Slow Bleed:</strong> Will loss aversion force you to bag-hold?</li>
+                <li><span class="bullet-icon">▸</span> <strong>The Winning Streak:</strong> Will overconfidence cause reckless position sizing?</li>
+                <li><span class="bullet-icon">▸</span> <strong>The Choppy Grind:</strong> Will boredom push you into overtrading?</li>
+              </ul>
+
+              <div style="margin-top: 24px; text-align: center;">
+                <button class="btn-terminal" id="btn-start-presentation">
+                  Enter The Simulator &rarr;
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 2: Dual-Process Theory -->
+    <section class="slide" id="slide-2" data-slide-index="1">
+      <div class="slide-content-wrapper">
+        <div class="slide-header">
+          <span class="slide-tag">02 // BEHAVIORAL FOUNDATION</span>
+          <h1 class="slide-title">System 1 vs. System 2 Thinking</h1>
+          <p class="slide-subtitle">Applying Daniel Kahneman's Dual-Process Cognitive Model to Financial Decisions.</p>
+        </div>
+
+        <div class="grid-2col">
+          <div class="card danger">
+            <div class="card-header">
+              <h3 class="card-title">System 1: Fast, Intuitive, Emotional</h3>
+              <span class="badge badge-red">The Trader's Trap</span>
+            </div>
+            <div class="card-body">
+              <ul class="feature-list">
+                <li><span class="bullet-icon">✕</span> <strong>Instinctive Reaction:</strong> Operates automatically with little or no conscious effort.</li>
+                <li><span class="bullet-icon">✕</span> <strong>Survival Heuristics:</strong> Evolutionary fight-or-flight triggers panic-selling during market drawdowns.</li>
+                <li><span class="bullet-icon">✕</span> <strong>Social Proof:</strong> Urges buying when everyone else is euphoric (FOMO at market peaks).</li>
+                <li><span class="bullet-icon">✕</span> <strong>Pain Avoidance:</strong> Treats a paper loss as unbearable, refusing to realize it until capital is destroyed.</li>
+              </ul>
+
+              <div class="callout danger">
+                <div class="callout-title">Default State</div>
+                In fast-moving markets, System 1 hijacks decision-making, converting rational strategy into emotional gambling.
+              </div>
+            </div>
+          </div>
+
+          <div class="card success">
+            <div class="card-header">
+              <h3 class="card-title">System 2: Slow, Deliberate, Probabilistic</h3>
+              <span class="badge badge-green">The Quantitative Mind</span>
+            </div>
+            <div class="card-body">
+              <ul class="feature-list">
+                <li><span class="bullet-icon">✓</span> <strong>Calculated Probabilities:</strong> Focuses on expected value: <em>EV = (Win% × Avg Win) - (Loss% × Avg Loss)</em>.</li>
+                <li><span class="bullet-icon">✓</span> <strong>Pre-Commitment:</strong> Fixes stop-losses and position sizes before entering a trade.</li>
+                <li><span class="bullet-icon">✓</span> <strong>Emotional Detachment:</strong> Treats individual trades as mere samples in a long-term statistical distribution.</li>
+                <li><span class="bullet-icon">✓</span> <strong>Systematic Execution:</strong> Executes rules regardless of current fear or greed levels.</li>
+              </ul>
+
+              <div class="callout success">
+                <div class="callout-title">The Antidote</div>
+                Consistent profitability requires building systematic rules that insulate trading execution from System 1 impulses.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 3: Scenario 1 - The Parabolic Run -->
+    <section class="slide" id="slide-3" data-slide-index="2">
+      <div class="slide-content-wrapper">
+        <div class="slide-header">
+          <span class="slide-tag">03 // SIMULATION SCENARIO 1</span>
+          <h1 class="slide-title">Scenario 1: The Parabolic Run</h1>
+          <p class="slide-subtitle">Target Bias: FOMO (Fear Of Missing Out) & Euphoric Herd Mentality.</p>
+        </div>
+
+        <div class="grid-split-70-30">
+          <div class="sim-mount-placeholder" id="sim-scenario-1-container">
+            <div class="placeholder-icon">📈</div>
+            <div class="placeholder-title">Interactive Chart Mount // Scenario 1 (NOVA Tech)</div>
+            <p class="placeholder-desc">
+              NOVA Tech surges from $50.00 to $125.00 (+150%) amidst parabolic hype and social media frenzy. 
+              Will you enter late at the top, or maintain risk discipline?
+            </p>
+            <div class="placeholder-tag">
+              <span class="badge badge-cyan">[Simulation Engine: Implemented in Milestone 2]</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Psychological Profile</h3>
+              <span class="badge badge-amber">Greed Trap</span>
+            </div>
+            <div class="card-body">
+              <p><strong>The Trap:</strong> Watching a stock surge creates acute emotional pain—not from losing money, but from seeing others profit while you sit in cash.</p>
+              
+              <div class="callout">
+                <div class="callout-title">Telemetry Tracked:</div>
+                The JavaScript engine measures whether you buy after exponential momentum has already priced in perfection.
+              </div>
+
+              <div class="formula-block">
+                FEI = Price(Entry) / MA5(Price)
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 4: Scenario 2 - The Flash Crash -->
+    <section class="slide" id="slide-4" data-slide-index="3">
+      <div class="slide-content-wrapper">
+        <div class="slide-header">
+          <span class="slide-tag">04 // SIMULATION SCENARIO 2</span>
+          <h1 class="slide-title">Scenario 2: The Flash Crash</h1>
+          <p class="slide-subtitle">Target Bias: Panic Selling & Capitulation at Maximum Pain.</p>
+        </div>
+
+        <div class="grid-split-70-30">
+          <div class="sim-mount-placeholder" id="sim-scenario-2-container">
+            <div class="placeholder-icon">⚡</div>
+            <div class="placeholder-title">Interactive Chart Mount // Scenario 2 (AeroDynamics)</div>
+            <p class="placeholder-desc">
+              Sudden regulatory rumors and margin cascades trigger a violent -42% plunge from $100 to $58. 
+              Will you dump at the bottom, or execute a pre-defined stop loss?
+            </p>
+            <div class="placeholder-tag">
+              <span class="badge badge-red">[Simulation Engine: Implemented in Milestone 2]</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Psychological Profile</h3>
+              <span class="badge badge-red">Panic Trap</span>
+            </div>
+            <div class="card-body">
+              <p><strong>The Trap:</strong> Violent red candles trigger intense cortisol releases. Traders capitulate and sell at the exact bottom purely to stop the acute emotional pain.</p>
+              
+              <div class="callout danger">
+                <div class="callout-title">3D Telemetry Link:</div>
+                During this scenario, the 3D Stress Orb in the HUD turns deep crimson with chaotic vertex vibrations.
+              </div>
+
+              <div class="formula-block">
+                PCS = Velocity(Drop) × SellUrgency
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 5: Scenario 3 - The Slow Bleed -->
+    <section class="slide" id="slide-5" data-slide-index="4">
+      <div class="slide-content-wrapper">
+        <div class="slide-header">
+          <span class="slide-tag">05 // SIMULATION SCENARIO 3</span>
+          <h1 class="slide-title">Scenario 3: The Slow Bleed</h1>
+          <p class="slide-subtitle">Target Bias: Loss Aversion & The Disposition Effect ("It's Not a Loss Until I Sell").</p>
+        </div>
+
+        <div class="grid-split-70-30">
+          <div class="sim-mount-placeholder" id="sim-scenario-3-container">
+            <div class="placeholder-icon">🩸</div>
+            <div class="placeholder-title">Interactive Chart Mount // Scenario 3 (Titan Energy)</div>
+            <p class="placeholder-desc">
+              Titan Energy suffers a steady, relentless -40% decline across 12 ticks. 
+              Small losses compound into catastrophic drawdowns as hopes for breakeven fade.
+            </p>
+            <div class="placeholder-tag">
+              <span class="badge badge-amber">[Simulation Engine: Implemented in Milestone 2]</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Psychological Profile</h3>
+              <span class="badge badge-amber">Denial Trap</span>
+            </div>
+            <div class="card-body">
+              <p><strong>The Trap:</strong> Kahneman & Tversky demonstrated that the psychological pain of losing $1,000 is twice as intense as the joy of winning $1,000.</p>
+              
+              <div class="callout">
+                <div class="callout-title">The Disposition Effect:</div>
+                Traders cut winning positions too early to lock in dopamine, but hold losing positions indefinitely to avoid confronting regret.
+              </div>
+
+              <div class="formula-block">
+                DER = RealizedGainRate / RealizedLossRate
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 6: Scenario 4 - The Winning Streak -->
+    <section class="slide" id="slide-6" data-slide-index="5">
+      <div class="slide-content-wrapper">
+        <div class="slide-header">
+          <span class="slide-tag">06 // SIMULATION SCENARIO 4</span>
+          <h1 class="slide-title">Scenario 4: The Winning Streak</h1>
+          <p class="slide-subtitle">Target Bias: Overconfidence, Reckless Position Sizing & Gambler's Fallacy.</p>
+        </div>
+
+        <div class="grid-split-70-30">
+          <div class="sim-mount-placeholder" id="sim-scenario-4-container">
+            <div class="placeholder-icon">🎰</div>
+            <div class="placeholder-title">Interactive Chart Mount // Scenario 4 (BioPulse Pharma)</div>
+            <p class="placeholder-desc">
+              Three consecutive quick wins inflate your confidence. 
+              Will you maintain 10% sizing, or double down with an 'All-In' bet on the 4th trade?
+            </p>
+            <div class="placeholder-tag">
+              <span class="badge badge-purple">[Simulation Engine: Implemented in Milestone 2]</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Psychological Profile</h3>
+              <span class="badge badge-purple">Hubris Trap</span>
+            </div>
+            <div class="card-body">
+              <p><strong>The Trap:</strong> Success in financial markets often breeds dangerous overconfidence. Traders mistake market variance and favorable conditions for personal genius.</p>
+              
+              <div class="callout danger">
+                <div class="callout-title">The Ruin Mechanism:</div>
+                One oversized 100% position with bad luck erases 20 consecutive disciplined trades.
+              </div>
+
+              <div class="formula-block">
+                SizingEscalation = AvgBet(Streak) / InitialBet
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 7: Scenario 5 - The Choppy Grind -->
+    <section class="slide" id="slide-7" data-slide-index="6">
+      <div class="slide-content-wrapper">
+        <div class="slide-header">
+          <span class="slide-tag">07 // SIMULATION SCENARIO 5</span>
+          <h1 class="slide-title">Scenario 5: The Choppy Grind</h1>
+          <p class="slide-subtitle">Target Bias: Boredom, Restlessness & The Compulsion to Overtrade.</p>
+        </div>
+
+        <div class="grid-split-70-30">
+          <div class="sim-mount-placeholder" id="sim-scenario-5-container">
+            <div class="placeholder-icon">🔄</div>
+            <div class="placeholder-title">Interactive Chart Mount // Scenario 5 (Global Retail)</div>
+            <p class="placeholder-desc">
+              Low-volatility sideways oscillations between $148 and $152 with zero trend. 
+              Can you sit on your hands in 100% Cash, or will you force low-probability trades?
+            </p>
+            <div class="placeholder-tag">
+              <span class="badge badge-cyan">[Simulation Engine: Implemented in Milestone 2]</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Psychological Profile</h3>
+              <span class="badge badge-cyan">Boredom Trap</span>
+            </div>
+            <div class="card-body">
+              <p><strong>The Trap:</strong> Modern humans associate effort and activity with achievement. In trading, activity without edge generates transaction drag and churn losses.</p>
+              
+              <div class="callout success">
+                <div class="callout-title">Jesse Livermore's Rule:</div>
+                <em>"Money is made by sitting, not by trading."</em> Cash is an active, strategic position.
+              </div>
+
+              <div class="formula-block">
+                ChurnRatio = TotalTrades / TrendStrength
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 8: The Python Quantitative Diagnostic -->
+    <section class="slide" id="slide-8" data-slide-index="7">
+      <div class="slide-content-wrapper">
+        <div class="slide-header">
+          <span class="slide-tag">08 // QUANTITATIVE ANALYSIS</span>
+          <h1 class="slide-title">The Quantitative Diagnostic Report</h1>
+          <p class="slide-subtitle">Behavioral profiling and Monte Carlo ruin calculations powered by Python.</p>
+        </div>
+
+        <div class="grid-2col">
+          <div class="card highlight">
+            <div class="card-header">
+              <h3 class="card-title">Your Trader Archetype</h3>
+              <span class="badge badge-purple" id="archetype-badge">Awaiting Data</span>
+            </div>
+            <div class="card-body">
+              <p>Upon completing the scenarios, your structured trade logs are dispatched to our <strong>Python Analytics Engine</strong> (FastAPI/NumPy), which clusters your decisions against behavioral finance benchmarks.</p>
+              
+              <div class="metric-row">
+                <div class="metric-box">
+                  <div class="metric-label">Disposition Effect</div>
+                  <div class="metric-value" id="diag-der">--</div>
+                </div>
+                <div class="metric-box">
+                  <div class="metric-label">FOMO Index</div>
+                  <div class="metric-value" id="diag-fomo">--</div>
+                </div>
+                <div class="metric-box">
+                  <div class="metric-label">Risk of Ruin</div>
+                  <div class="metric-value" id="diag-ruin">--</div>
+                </div>
+              </div>
+
+              <div class="callout" id="archetype-description">
+                <div class="callout-title">Status:</div>
+                Complete the trading scenarios in Milestone 2 to generate your personalized behavioral profile.
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Monte Carlo Risk-of-Ruin Model</h3>
+              <span class="badge badge-cyan">1,000 Iterations</span>
+            </div>
+            <div class="card-body">
+              <p>Python simulates 1,000 theoretical trading paths of 100 consecutive trades using your empirical win rate, average payoff ratio, and sizing discipline.</p>
+
+              <div class="formula-block">
+                P(Ruin) = ((1 - A) / (1 + A))^CapitalUnits
+              </div>
+
+              <ul class="feature-list" style="margin-top: 16px;">
+                <li><span class="bullet-icon">▸</span> Shows long-term survival probability.</li>
+                <li><span class="bullet-icon">▸</span> Demonstrates how large position sizes guarantee eventual liquidation.</li>
+              </ul>
+              
+              <div class="placeholder-tag" style="text-align: center; margin-top: 24px;">
+                <span class="badge badge-cyan">[Python Backend Service: Implemented in Milestone 3]</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 9: The Antidote: Quantitative Rules -->
+    <section class="slide" id="slide-9" data-slide-index="8">
+      <div class="slide-content-wrapper">
+        <div class="slide-header">
+          <span class="slide-tag">09 // SYSTEMATIC RISK MANAGEMENT</span>
+          <h1 class="slide-title">The Antidote: Quantitative Rules</h1>
+          <p class="slide-subtitle">Constructing rule-based barriers to insulate execution from emotional bias.</p>
+        </div>
+
+        <div class="grid-3col">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">1. The 1%–2% Rule</h3>
+              <span class="badge badge-green">Capital Preservation</span>
+            </div>
+            <div class="card-body">
+              <p>Never risk more than 1% to 2% of total account equity on any single trade.</p>
+              <div class="formula-block">
+                Shares = (Equity × 0.01) / (Entry - StopLoss)
+              </div>
+              <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 8px;">
+                Even a catastrophic string of 10 consecutive losses preserves >90% of your capital.
+              </p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">2. Asymmetric R:R</h3>
+              <span class="badge badge-cyan">Positive Expectancy</span>
+            </div>
+            <div class="card-body">
+              <p>Target a minimum of 2:1 or 3:1 Reward-to-Risk ratio on all trade entries.</p>
+              <div class="formula-block">
+                Expectancy = (Win% × 3R) - (Loss% × 1R)
+              </div>
+              <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 8px;">
+                With a 3:1 ratio, you can be wrong 60% of the time and still remain consistently profitable.
+              </p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">3. Automated Stops</h3>
+              <span class="badge badge-amber">Pre-Commitment</span>
+            </div>
+            <div class="card-body">
+              <p>Hard stop-orders placed simultaneously with order entry eliminate loss aversion.</p>
+              <div class="callout danger" style="padding: 10px; margin: 10px 0; font-size: 0.85rem;">
+                Never adjust a stop-loss downward during market panic.
+              </div>
+              <p style="font-size: 0.88rem; color: var(--text-muted);">
+                Removes decision-making from System 1 during high-stress market moments.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SLIDE 10: Conclusion & Sandbox Mode -->
+    <section class="slide" id="slide-10" data-slide-index="9">
+      <div class="slide-content-wrapper">
+        <div class="slide-header">
+          <span class="slide-tag">10 // CONCLUSION & REFLECTION</span>
+          <h1 class="slide-title">Mastery Over Oneself</h1>
+          <p class="slide-subtitle">Financial markets do not test your knowledge; they test your emotional discipline.</p>
+        </div>
+
+        <div class="grid-2col">
+          <div class="card highlight">
+            <div class="card-header">
+              <h3 class="card-title">Core Presentation Takeaways</h3>
+              <span class="badge badge-green">Key Principles</span>
+            </div>
+            <div class="card-body">
+              <ul class="feature-list">
+                <li><span class="bullet-icon">▸</span> <strong>The Market is Neutral:</strong> The market cannot see you, does not know your entry price, and has no personal malice.</li>
+                <li><span class="bullet-icon">▸</span> <strong>Losses are Operating Expenses:</strong> Taking small, controlled losses is the price of admission for probabilistic business.</li>
+                <li><span class="bullet-icon">▸</span> <strong>Process Over Outcome:</strong> A bad trade can make money by luck; a good trade can lose money by variance. Focus on process.</li>
+                <li><span class="bullet-icon">▸</span> <strong>Rules Trump Intuition:</strong> Quantitative systems protect you from your own primitive instincts.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Infinite Practice Sandbox</h3>
+              <span class="badge badge-cyan">Free Play</span>
+            </div>
+            <div class="card-body">
+              <p>Practice trading with real-time feedback using our infinite procedural market generator.</p>
+              
+              <div class="sim-mount-placeholder" style="min-height: 180px; margin-top: 16px;">
+                <div class="placeholder-icon" style="font-size: 1.8rem;">🎮</div>
+                <div class="placeholder-title" style="font-size: 0.95rem;">Sandbox Simulator Mount</div>
+                <div class="placeholder-tag">
+                  <span class="badge badge-cyan">[Sandbox Mode: Milestone 5]</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Bottom Navigation & Controls -->
+  <footer class="deck-controls">
+    <div class="nav-button-group">
+      <button class="nav-btn" id="btn-prev-slide" title="Previous Slide (← or PageUp)">
+        <span>&larr;</span> Prev
+      </button>
+      <button class="nav-btn" id="btn-next-slide" title="Next Slide (→ or Space)">
+        Next <span>&rarr;</span>
+      </button>
+    </div>
+
+    <!-- Slide indicator dots -->
+    <div class="slide-dots-container" id="slide-dots-container"></div>
+
+    <div class="nav-indicator">
+      <div class="keyboard-hints">
+        <span><span class="key-badge">&larr;</span> / <span class="key-badge">&rarr;</span> Navigate</span>
+        <span><span class="key-badge">Space</span> Advance</span>
+      </div>
+      <div class="slide-counter" id="slide-counter">01 / 10</div>
+    </div>
+  </footer>
+
+  <!-- Application Logic -->
+  <script src="js/app.js" defer></script>
+</body>
+</html>
