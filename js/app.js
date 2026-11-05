@@ -41,10 +41,56 @@ class SlideDeck {
 
     this.buildDots();
     this.bindEvents();
+    this.setupSimulationHooks();
     
     // Check for initial URL hash (e.g. #slide-3)
     const initialIndex = this.getIndexFromHash();
     this.goToSlide(initialIndex, false);
+  }
+
+  /**
+   * Connects slide changes to the trading simulator scenarios.
+   */
+  setupSimulationHooks() {
+    this.onSlideEnter((slideIndex) => {
+      if (this.isSimulationSlide(slideIndex) && window.simulator) {
+        const scenarioId = this.activeScenarioId(slideIndex);
+        const container = document.getElementById(`sim-scenario-${scenarioId}-container`);
+        if (container) {
+          // Mount scenario if entering for the first time or switching scenarios
+          if (!window.simulator.activeScenario || window.simulator.activeScenario.id !== scenarioId) {
+            window.simulator.mountScenario(scenarioId, container);
+          }
+        }
+      }
+    });
+
+    this.onSlideLeave((slideIndex) => {
+      if (this.isSimulationSlide(slideIndex) && window.simulator) {
+        window.simulator.stopAutoPlay();
+      }
+    });
+  }
+
+  /**
+   * Checks if a slide index corresponds to one of the 5 simulation scenarios.
+   * @param {number} index
+   * @returns {boolean}
+   */
+  isSimulationSlide(index) {
+    return index >= 2 && index <= 6;
+  }
+
+  /**
+   * Maps slide index to Scenario ID (1 through 5).
+   * @param {number} index
+   * @returns {number|null}
+   */
+  activeScenarioId(index) {
+    if (this.isSimulationSlide(index)) {
+      return index - 1; // Slide 3 (idx 2) -> 1, Slide 4 (idx 3) -> 2, etc.
+    }
+    return null;
   }
 
   /**
@@ -111,8 +157,15 @@ class SlideDeck {
         break;
 
       case ' ': // Space bar
-        // Space advances slide if no simulation modal is capturing space
         e.preventDefault();
+        // If on an active simulation slide, Space advances the candle instead of skipping the slide
+        if (this.isSimulationSlide(this.currentIndex) && window.simulator && window.simulator.activeScenario) {
+          const container = document.getElementById(`sim-scenario-${this.activeScenarioId(this.currentIndex)}-container`);
+          if (container && window.simulator.currentTickIndex < window.simulator.activeScenario.ticks.length - 1) {
+            window.simulator.executeHold(container);
+            return;
+          }
+        }
         this.nextSlide();
         break;
 

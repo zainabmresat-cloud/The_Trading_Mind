@@ -53,43 +53,43 @@
 
 ## Milestone 2: JavaScript Trading Simulation Engine & Five Scenarios
 ### 2.1 Implementation Tasks
-- [ ] Author `js/scenarios.js`:
-  - [ ] Define dataset for Scenario 1: NOVA Tech (Parabolic FOMO run: $50 ➔ $125 ➔ $78)
-  - [ ] Define dataset for Scenario 2: AeroDynamics (Flash crash panic: $100 ➔ $58 bottom ➔ $88)
-  - [ ] Define dataset for Scenario 3: Titan Energy (Slow bleed loss aversion: $80 ➔ $48)
-  - [ ] Define dataset for Scenario 4: BioPulse Pharma (Win streak overconfidence: 3 swings ➔ reversal)
-  - [ ] Define dataset for Scenario 5: Global Retail Index (Choppy sideways grind: $148–$152)
-  - [ ] Attach contextual news headlines and sentiment flags to specific ticks
-- [ ] Author `js/chart.js`:
-  - [ ] HTML5 Canvas candlestick and line chart renderer
-  - [ ] Auto-scaling Y-axis (price range) and X-axis (ticks)
-  - [ ] Green/Red candle bodies with wicks and volume bars
-  - [ ] Visual buy/sell markers plotted at execution points
-- [ ] Author `js/simulator.js`:
-  - [ ] Core portfolio ledger: `$10,000.00` starting cash, shares held, average cost basis
-  - [ ] Real-time math: Unrealized P&L, Realized P&L, Total Equity, Peak Drawdown %
-  - [ ] Order execution logic: `BUY`, `SELL` (partial 50% or full 100%), `HOLD / NEXT TICK`
-  - [ ] Position sizing controls (25%, 50%, 75%, 100% All-In preset buttons + custom slider)
-  - [ ] Telemetry collector: record timestamps, decision delay (hesitation ms), order price, and sizing
-- [ ] Implement `css/simulator.css`:
-  - [ ] Order entry console, position sliders, and trade confirmation badges
-  - [ ] News ticker ticker alert styling (flashing breaking news banners)
+- [x] Author `js/scenarios.js`:
+  - [x] Define dataset for Scenario 1: NOVA Tech (Parabolic FOMO run: $50 ➔ $125 ➔ $78)
+  - [x] Define dataset for Scenario 2: AeroDynamics (Flash crash panic: $100 ➔ $58 bottom ➔ $88)
+  - [x] Define dataset for Scenario 3: Titan Energy (Slow bleed loss aversion: $80 ➔ $48)
+  - [x] Define dataset for Scenario 4: BioPulse Pharma (Win streak overconfidence: 3 swings ➔ reversal)
+  - [x] Define dataset for Scenario 5: Global Retail Index (Choppy sideways grind: $148–$152)
+  - [x] Attach contextual news headlines and sentiment flags to specific ticks
+- [x] Author `js/chart.js`:
+  - [x] HTML5 Canvas candlestick and line chart renderer
+  - [x] Auto-scaling Y-axis (price range) and X-axis (ticks)
+  - [x] Green/Red candle bodies with wicks and volume bars
+  - [x] Visual buy/sell markers plotted at execution points
+- [x] Author `js/simulator.js`:
+  - [x] Core portfolio ledger: `$10,000.00` starting cash, shares held, average cost basis
+  - [x] Real-time math: Unrealized P&L, Realized P&L, Total Equity, Peak Drawdown %
+  - [x] Order execution logic: `BUY`, `SELL` (partial 50% or full 100%), `HOLD / NEXT TICK`
+  - [x] Position sizing controls (25%, 50%, 75%, 100% All-In preset buttons + custom slider)
+  - [x] Telemetry collector: record timestamps, decision delay (hesitation ms), order price, and sizing
+- [x] Implement `css/simulator.css`:
+  - [x] Order entry console, position sliders, and trade confirmation badges
+  - [x] News ticker ticker alert styling (flashing breaking news banners)
 
 ### 2.2 Testing & Verification Tasks
-- [ ] Verify ledger math: starting balance $10,000, zero share execution when cash is insufficient
-- [ ] Verify P&L updates correctly as prices tick up and down
-- [ ] Test all 5 scenarios to ensure scripted price curves and headlines fire on designated ticks
-- [ ] Verify execution markers display correctly on canvas candlesticks
-- [ ] Confirm telemetry log captures structured action objects accurately
+- [x] Verify ledger math: starting balance $10,000, zero share execution when cash is insufficient
+- [x] Verify P&L updates correctly as prices tick up and down
+- [x] Test all 5 scenarios to ensure scripted price curves and headlines fire on designated ticks
+- [x] Verify execution markers display correctly on canvas candlesticks
+- [x] Confirm telemetry log captures structured action objects accurately
 
 ### 2.3 Git Checkpoint
-- [ ] Stage and commit Milestone 2 files:  
+- [x] Stage and commit Milestone 2 files:  
   `git add js/scenarios.js js/chart.js js/simulator.js css/simulator.css`  
   `git commit -m "feat(simulator): implement 5-scenario market simulation, canvas charting, and trade ledger"`
 
 ### 2.4 Reflection & Documentation Checkpoint
-- [ ] Inspect simulated trade logs for accuracy and completeness
-- [ ] Verify that telemetry payload format matches Python backend contract
+- [x] Inspect simulated trade logs for accuracy and completeness
+- [x] Verify that telemetry payload format matches Python backend contract
 
 ---
 
